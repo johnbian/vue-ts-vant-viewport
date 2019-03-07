@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <Button @click="_add" :inline="true">+</Button>
+    <Button @click="_add">+</Button>
       {{ num }}
-    <Button @click="_del" :disabled="num<=0" :inline="true">-</Button>
+    <Button @click="_del" :disabled="num<=0">-</Button>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
