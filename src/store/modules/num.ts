@@ -1,5 +1,5 @@
 /**
- * 加减
+ * 请求数量的加减 用来控制loading
  */
 const state = {
   num: 0,

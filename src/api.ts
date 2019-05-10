@@ -7,34 +7,13 @@ class API {
 
   /**
    * @author johnbian
-   * @param tableId table页ID
-   * @param typeId 新闻类型ID:1太平头条，2健康讲堂
-   * @description 获取新闻列表
+   * @description demo 测试post请求
    */
-  public async queryEssayList(pageNo: number, tableId: number, typeId: number): Promise<any> {
-    const params = {
-      pageNo,
-      pageSize: 10,
-      tableId,
-      typeId,
-    };
-    const res = await fetch.post('/campaignsms/essay/queryEssayList', params);
+  public async nameSet(): Promise<any> {
+    const params = {};
+    const res = await fetch.post('/nameSet', params);
     return res;
   }
-
-  /**
-   * @author johnbian
-   * @param essayId 文章ID
-   * @description 新闻详情查询请求
-   */
-  public async queryEssayDetail(essayId: number): Promise<any> {
-    const params = {
-      essayId,
-    };
-    const res = await fetch.post('/campaignsms/essay/queryEssayDetail', params);
-    return res;
-  }
-
 }
 
 const api =  new API();

@@ -1,5 +1,5 @@
 {
-  "name": "insure-shop",
+  "name": "vue-ts-vant-viewport",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,18 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-px-to-viewport": "^1.1.0",
+    "postcss-viewport-units": "^0.1.6",
+    "postcss-write-svg": "^3.0.1",
     "vant": "^1.5.9",
     "vue": "^2.6.6",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
@@ -25,11 +31,6 @@
     "ts-import-plugin": "^1.5.5",
     "typescript": "^3.0.0",
     "vue-template-compiler": "^2.5.21"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
   },
   "browserslist": [
     "> 1%",

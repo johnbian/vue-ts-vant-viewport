@@ -1,8 +1,7 @@
 // vue.config.js
 const tsImportPluginFactory = require('ts-import-plugin')
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/static/tptt' : '/',
-
+  publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境...
@@ -11,20 +10,25 @@ module.exports = {
     }
     config.module.rules.push({
       test: /\.(jsx|tsx|js|ts)$/,
-      loader: 'ts-loader',
-      options: {
-        transpileOnly: true,
-        getCustomTransformers: () => ({
-          before: [ tsImportPluginFactory({
-            libraryName: 'vant',
-            libraryDirectory: 'lib',
-            style: true
-          }) ]
-        }),
-        compilerOptions: {
-          module: 'es2015'
+      use: [
+        {
+          loader: 'ts-loader',
+          options: {
+            happyPackMode: true, // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
+            transpileOnly: true,
+            getCustomTransformers: () => ({
+              before: [ tsImportPluginFactory({
+                libraryName: 'vant',
+                libraryDirectory: 'lib',
+                style: true
+              })]
+            }),
+            compilerOptions: {
+              module: 'es2015'
+            }
+          }
         }
-      },
+      ],
       exclude: /node_modules/
     })
   },
@@ -36,5 +40,7 @@ module.exports = {
         'import': []
       }
     }
-  }
+  },
+  
+  parallel: false,
 }
