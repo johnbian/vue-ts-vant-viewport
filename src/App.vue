@@ -1,12 +1,9 @@
 <template>
   <div id="app">
     <transition :name="transitionName">
-      <keep-alive v-if="$route.meta.keepAlive">
+      <keep-alive :exclude="excludePage">
         <router-view />
       </keep-alive>
-    </transition>
-    <transition :name="transitionName">
-      <router-view v-if="!$route.meta.keepAlive" />
     </transition>
   </div>
 </template>
@@ -23,6 +20,10 @@ export default class App extends Vue {
 
   get loadingNum() {
     return this.$store.state.num.num;
+  }
+
+  get excludePage() {
+    return this.$store.state.num.includePage;
   }
 
   @Watch('loadingNum')
