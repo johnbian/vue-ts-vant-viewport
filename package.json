@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-px-to-viewport": "^1.1.0",
