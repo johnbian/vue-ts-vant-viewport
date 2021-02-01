@@ -13,7 +13,7 @@ export default new Vuex.Store({
   },
   plugins: [createPersistedState({
     storage: window.sessionStorage,
-    reducer(val) {
+    reducer(val: any) {
       return {
         user: val.user,
       };

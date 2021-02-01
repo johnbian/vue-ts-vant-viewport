@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import * as axios from 'axios';
-import commonConfig from '@/assets/config';
+import commonConfig from '@/assets/config/config';
 import store from '@/store';
 
 /**

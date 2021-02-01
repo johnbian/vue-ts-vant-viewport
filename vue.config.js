@@ -1,7 +1,8 @@
 // vue.config.js
 const tsImportPluginFactory = require('ts-import-plugin')
+const proxy = require('./src/assets/config/proxy.ts');
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? process.env.VUE_APP_PUBLIC_PATH : '/',
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境...
@@ -31,6 +32,10 @@ module.exports = {
       ],
       exclude: /node_modules/
     })
+  },
+
+  devServer: {
+    proxy: proxy[process.env.VUE_APP_ENV]
   },
 
   css: {
